@@ -1,0 +1,52 @@
+In Java, it’s very easy to sort an array or a list with primitive types. But you can also use Comparableand Comparator interfaces when you want to be able to short arrays or lists of your own custom objects.
+
+Let see an example of sorting a simple array.
+
+<<arraysort>>
+
+Let see an example of sorting a List arraylist.
+
+<<arraysort2>>
+
+Now if you have an employee class as emp and you want a do define a list of employees can you do sorting with collection.sort ? 
+No. And that is completely reasonable because Arrays.sort/Collections.sort method has no idea on how to compare your employee/custom objects. Somehow we have to give Arrays.sort a mechanism on how to compare my objects. To do that, we simply implement the generic Comparable<E> interface and override the compareTo method.
+
+
+Comparable :
+Comparable is implemented by a class in order to be able to comparing object of itself with some other objects. The class itself must implement the interface in order to be able to compare its instance(s). The method required for implementation is compareTo()
+
+<< Example >>
+
+The employee will be sorted using the id field as a key. The sorting order is decided by the return value of the compareTo() method.The method returns a number indicating whether the object being compared is less than, equal to or greater than the object being passed as an argument.
+
+------------
+In above way we can just sort all instances by one type. What if i want to on demand decide lets sort by age, or lets sort by salary. 
+In lot of portal like amazon it will allow you to sort by price, rating, and lot other options. 
+How do we do that. For that we need comparator. 
+
+Comparator uses a seperate class that enables you to compare two objects at a time. So for every type of comparsion we develop a class. We will see an example.
+It has a method called compare(object o1, object o2), that enables you to compare two objects and returns int as well similar to comparable. 
+
+Lets assume that we have a portal of employees and client needs to sort employee by salary or by age. He can decide on run time. 
+For that first we need to define two comparator class one for salary comparision and one for age like below. 
+
+<<>>
+<<>>
+
+Then we can sort it with any of these as below. 
+<<>>
+
+
+
+Comparator Vs Comparable
+
+The Comparable interface is a good choice when used for defining the default ordering for all your objects.
+
+why use a Comparator if we already have Comparable?
+
+There are several reasons why:
+    We might not want to modify the source code of the class whose objects we want to sort, thus making the use of Comparable impossible
+    Using Comparators allows us to avoid adding additional code to our domain classes
+    We can define multiple different comparison strategies which isn’t possible when using Comparable
+    
+    

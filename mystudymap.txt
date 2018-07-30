@@ -1,0 +1,89 @@
+The java.util.Map interface represents a mapping between a key and a value. The Map interface is not a subtype of the Collection interface. Therefore it behaves a bit different from the rest of the collection types. 
+
+
+The Map interface defines an object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value. The HashMap class is an efficient implementation of the Map interface.
+The Map interface is not a subtype of the Collection interface. Most commonly used Map implementations are HashMap and TreeMap. 
+
+Some methods used in Map are below. We will be seeing them in our example.
+
+    public Object put(Object key, Object value) : This is used to insert an entry in this map.
+    public void putAll(Map map) : This is used when we have to insert map in a map. 
+    public Object remove(Object key) :  This is used to delete an entry for the  key.
+    public Object get(Object key) : This is used to return the value for the specified key.
+    public boolean containsKey(Object key) : This is used to search the  key from this map. It will retrun true or false.
+    public Set keySet() :This will returns the Set view containing all the keys.
+    public Set entrySet() : This will returns the Set view containing all the keys and values.
+
+
+
+HashMap is a non-synchronized collection class. If we need to perform thread-safe operations on it then we must need to synchronize it explicitly.
+
+HashMap maps a key and a value. It does not guarantee any order of the elements stored internally in the map.
+
+TreeMap also maps a key and a value. Furthermore it guarantees the order in which keys or values are iterated - which is the sort order of the keys or values. 
+
+Some example of key value pairs are like zipcode vs city, EMPID vs JOBStatus,Error Code Vs description etc.
+
+HashMap and Hashtable both classes implements java.util.Map interface, however there are differences in the way they work and their usage.
+
+ HashMap is non-synchronized and Hashtable is synchronized
+ HashMap implementation LinkedHashMap maintains the insertion order and TreeMap sorts the mappings based on the ascending order of keys.
+
+Hashtable doesn’t guarantee any kind of order. It doesn’t maintain the mappings in any particular order.
+
+
+
+
+
+
+
+The java.util.Collections class provides useful functionalities for working with collections.
+Table 1. Collections Method 	Description
+
+Collections.copy(list, list)
+	
+
+Copy a collection to another
+
+Collections.reverse(list)
+	
+
+Reverse the order of the list
+
+Collections.shuffle(list)
+	
+
+Shuffle the list
+
+Collections.sort(list)
+	
+
+Sort the list
+
+
+---------------------------------------
+queue
+
+A queue is a linear data structure which follows the FIFO (first-in first-out) principle. That means the object which is inserted first will be the first one out, followed by the object which was inserted next.
+
+
+The queue supports below core operations &#8211;</p>
+<ol>
+<li><code>enqueue/add:</code> Inserts an item at the rear of the queue.<br />
+&nbsp;</li>
+<li><code>dequeue/remove:</code> Removes the object from the front of the queue thereby decremeting queue size by one.<br />
+&nbsp;</li>
+<li><code>peek:</code> Returns the object at the front of the queue without removing it.<br />
+&nbsp;</li>
+<li><code>isEmpty:</code> Tests if the queue is empty or not.<br />
+&nbsp;</li>
+<li><code>size:</code> Returns the number of elements present in the queue.<br />
+&nbsp;</li>
+</ol>
+poll()-Removes and returns the head of the queue. Returns null if queue is empty.
+
+
+, LinkedList implements the Queue interface, providing first in, first out (FIFO) queue operations for add, poll, and so on..
+
+
+

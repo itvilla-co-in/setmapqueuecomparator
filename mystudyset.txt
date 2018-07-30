@@ -1,0 +1,39 @@
+
+    A set is a collection that doesn’t allow duplicate entries. A set has the same methods as the collection interface. It can contain at least one 1 null element.
+    The set implementations are HashSet, LinkedHashSet and TreeSet.
+    Element in HashSet, LinkedHashSet are not sorted but TreeSet is sorted.
+
+    
+    
+    HashSet is an abstract implementation of Set interface. It creates a collection that uses a hash table for storing the elements.
+    A HashTable uses hashing mechanism to store the objects. Hashing means, a key is used to determine a unique value, called its hash code. Every hash code represents a data associated with key.
+    
+    
+    
+    LinkedHashSet maintains a linked list of the entries in the set.
+    The elements are stored in the order in which they were inserted.
+    While retrieving the LinkedHashSet elements using an Iterator, the elements will be returned in the order in which they were inserted.
+    
+    TreeSet is a Set implementation that uses tree concept for storing object. It stores the elements in sorted order. Accessing TreeSet is quite faster than other set implementations.
+    
+     If you check the output, you can notice that there is only one entry for the employee “Arun”. However we have added the employee “Arun” two times to the TreeSet. Thus we have ensured that duplicates are not allowed in TreeSet . This is done by implementing Comparable interface in the Employee class. The compareTo() method in the Employee class defines how two employee objects should be compared. We have defined two employee objects to be equal if their empId is equal.
+
+The compareTo() method is defined such that the employee objects are sorted in ascending order of empId (which is evident in the output).
+
+User defined objects can also be added to TreeSet by passing a Comparator to the constructor function during TreeSet creation. In such case the custom class need not implement Comparable interface.
+
+Here is a Java program that shows how to add custom objects to TreeSet with a comparator defined.
+
+
+    
+    
+    The Collections utility class provide several methods involving in set collection. So consult its Javadoc to check if some useful operations are already made for reuse:
+
+    checkedSet(): Returns a dynamically typesafe view of the specified set.
+    checkedSortedSet(): Returns a dynamically typesafe view of the specified sorted set.
+    emptySet(): Returns the empty set (immutable).
+    singleton(): Returns an immutable set containing only the specified object.
+    unmodifiableSet(): Returns an unmodifiable view of the specified set.
+    unmodifiableSortedSet(): Returns an unmodifiable view of the specified sorted set.  
+    
+    
